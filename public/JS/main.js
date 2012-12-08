@@ -30,6 +30,11 @@ $(function () {
             return false;
         }
     });
+
+    window.onbeforeunload = function () {
+        return "Your transcript will be lost if you leave the page, are you sure?";
+    };
+
     vm = new Structure();
     ko.applyBindings(vm);
 });
