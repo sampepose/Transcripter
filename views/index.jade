@@ -14,7 +14,7 @@ html
       input#p2(type='text', data-bind='value: person2')
     form(data-bind="submit: submit, visible: page() == 3")
       label Entry
-      input#entry(type='text', data-bind='value: curEntry')
+      textarea#entry(data-bind="value: curEntry, valueUpdate: 'afterkeydown'")
     br
     // ko foreach: entries
     p.tal(data-bind="html:$data")

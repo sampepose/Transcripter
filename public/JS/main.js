@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
     function Structure() {
         var self = this;
         this.page = ko.observable("1");
@@ -7,21 +7,29 @@ $(function(){
         this.curPerson = ko.observable("");
         this.curEntry = ko.observable("");
         this.entries = ko.observableArray();
-        this.submitP1 = function() {
+        this.submitP1 = function () {
             self.page(2);
             self.curPerson(self.person2());
             $("input#p2").focus();
         };
-        this.submitP2 = function() {
+        this.submitP2 = function () {
             self.page(3);
-            $("input#entry").focus();
+            $("textarea#entry").focus();
         };
-        this.submit = function() {
+        this.submit = function () {
             self.curPerson(self.curPerson() == self.person1() ? self.person2() : self.person1());
             self.entries.push("<b>" + self.curPerson() + ": </b>" + self.curEntry());
             self.curEntry("");
         };
     }
+
+    $("textarea#entry").bind('keypress', function (e) {
+        var code = e.keyCode || e.which;
+        if (code == 13) {
+            $(this).parent().submit();
+            return false;
+        }
+    });
     vm = new Structure();
     ko.applyBindings(vm);
 });
