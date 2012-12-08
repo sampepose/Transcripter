@@ -1,0 +1,20 @@
+{
+  "name":"Transcripter",
+  "version":"0.0.1",
+  "description":"TBD",
+  "main":"server.js",
+  "repository":{
+    "type":"git",
+    "url":""
+  },
+  "license":"Commercial",
+  "dependencies":{
+    "node-static":"0.5.9",
+    "express": "3.0.0beta4",
+    "jade":"0.26.3"
+  },
+  "engines":{
+    "node":"0.8.2",
+    "npm":"1.1.36"
+  }
+}

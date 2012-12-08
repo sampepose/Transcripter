@@ -1,0 +1,27 @@
+!!! 5
+html
+  head
+    title Page
+    link(rel='stylesheet',type='text/css', href='/CSS/bootstrap.css')
+    link(rel='stylesheet',type='text/css', href='/CSS/bootstrap-responsive.css')
+    link(rel='stylesheet',type='text/css', href='/CSS/styles.css')
+  body.tac
+    form(data-bind="submit: submitP1, visible: page() == 1")
+      label Person 1
+      input(type='text', data-bind='value: person1')
+    form(data-bind="submit: submitP2, visible: page() == 2")
+      label Person 2
+      input#p2(type='text', data-bind='value: person2')
+    form(data-bind="submit: submit, visible: page() == 3")
+      label Entry
+      input#entry(type='text', data-bind='value: curEntry')
+    br
+    // ko foreach: entries
+    p.tal(data-bind="html:$data")
+    // /ko
+    br
+    span &copy; Sam Pepose
+    script(type='text/javascript', src='/JS/libs/jquery-1.8.2.js')
+    script(type='text/javascript', src='/JS/libs/bootstrap.js')
+    script(type='text/javascript', src='/JS/libs/knockout-2.2.0.debug.js')
+    script(type='text/javascript', src='/JS/main.js')
